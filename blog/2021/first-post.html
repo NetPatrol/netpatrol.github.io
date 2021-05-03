@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>First Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../">JBake</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../feed.xml">Subscribe</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+	<div class="page-header">
+		<h1>Соблюдая лучшие традиции рождения. Привет, Мир!</h1>
+	</div>
+
+	<p><em>03 мая 2021</em></p>
+
+	<p>
+<p>Собственно первый пост этого блога.</p>
+
+<!-- <ul>
+<li><a href="http://example.org">http://example.org</a></li>
+<li><a href="http://example.org">Example.org</a></li>
+</ul> -->
+
+<p>Совершенно не понятно о чем писать, по этому копипастну пока сюда статейку
+  по теме типов связей в реляционных БД.</p>
+<p>Типы связей в реляционных базах данных
+Примечание:
+Во всех статьях текущей категории уроков по SQL используются примеры и задачи, основанные на учебной базе данных.
+Приступая к изучению данного материала, рекомендуется ознакомиться с описанием учебной БД.
+Практически всегда БД не ограничивается одной таблицей. Сложно представить себе какой-либо бизнес-процесс на предприятии, который мог бы сконцентрироваться только на одном предмете в плане информации.
+Рассмотрим пример учебной базы данных. Имеется отдел, который занимается обработкой звонков, поступающих на различные линии. Линии обслуживаются конкретными операторами. Операторы состоят в разных группах под присмотром супервайзеров.
+Только из данного краткого описания можно выделить несколько самостоятельных объектов:
+<b>Телефонные линии обслуживания;
+Сотрудники отдела;
+Должности сотрудников;
+Группы, по которым распределены сотрудники;
+Звонки.</b></p>
+<img src="https://office-menu.ru/images/sql/diag_BD_CC.png"/>
+<p>Ознакомившись с диаграммой базы данных, можно обратить внимание на то, что некоторая информация из одних таблиц присутствует в других, т.е. между ними имеются связи.
+В нашем конкретном случае, все таблицы можно соединить между собой. Чтобы понять, как это правильно сделать, необходимо рассмотреть типы связей.
+Логику соединения таблиц в БД важно понять с самого начала изучения SQL, так как наверняка Вы не будете писать запросы только к одной таблице.</p>
+<h4>Всего существует 3 типа связей:</h4>
+<b>Один к одному;
+Один ко многим;
+Многие ко многим.</>
+<blockquote>Примечание:
+В данном материале обозначения связей приводятся на примере MS SQL Server. В иных СУБД они могут обозначаться по-разному, но у Вас не должно возникнуть проблем с определением их типа, т.к. они либо очень похожи, либо интуитивно понятны.</blockquote>
+<h3>Связь «Один к одному»</h3>
+<p>Связь один к одному образуется, когда ключевой столбец (идентификатор) присутствует в другой таблице, в которой тоже является ключом либо свойствами столбца задана его уникальность (одно и тоже значение не может повторяться в разных строках).
+На практике связь «один к одному» наблюдается не часто. Например, она может возникнуть, когда требуется разделить данных одной таблицы на несколько отдельных таблиц с целью безопасности.
+В учебной безе данных нет подходящего примера, но гипотетически могла бы существовать необходимость разделения таблицы сотрудников.
+Пример:
+Представьте, что базой данных пользуются несколько менеджеров и аналитиков, а таблица «Сотрудники» содержит те же столбцы, что и учебная база. Следовательно, доступ к персональным данным может получить любой из упомянутых работников.</p>
+<img src="https://office-menu.ru/images/sql/rows_table.png"/>
+<p>Чтобы устранить возможность утечки конфиденциальной информации, принимается решение о переносе информации паспортных данных в отдельную таблицу, доступ к которой предоставляется ограниченному кругу лиц.</p>
+<img src="https://office-menu.ru/images/sql/one-to-one.png"/>
+<h3>Связь «Один ко многим»</h3>
+<p>В типе связей один ко многим одной записи первой таблицы соответствует несколько записей в другой таблице.
+Рассмотрим связь учебной базы данных между должностями и сотрудниками, которая относится к рассматриваемому типу.
+Связь один ко многим
+Записи должностей в таблице «Должность» уникальны, так как нет смысла повторно создавать имеющуюся запись. Записи в таблице «Сотрудники» также уникальны, но несколько различных сотрудников могут находиться на одинаковой должностной позиции.
+Символ ключа на конце связи указывает, что таблица, к которой этой конец прилегает, находится на стороне «один» (связанный столбец является первичным ключом), а символ бесконечности находится на стороне «многие» (такой столбец является внешним ключом).
+Связь «Многие ко многим»
+Если нескольким записям из одной таблицы соответствует несколько записей из другой таблицы, то такая связь называется «многие ко многим» и организовывается посредством связывающей таблицы.
+В нашей базе подобное наблюдается только между таблицами с сотрудниками и линиями.</p>
+<h3>Связь многие ко многим</h3>
+Из диаграммы видно, что имеются две связи «один ко многим» (один сотрудник может обрабатывать несколько телефонных линий, и одну линию могут обрабатывать несколько сотрудников), но в совокупности они образуют связь «многие ко многим».
+Для чего все это нужно?
+Связи выполняют более важную роль, чем просто информация размещения данных по таблицам. Прежде всего они требуются разработчикам для поддержания целостности баз данных.
+Правильно настроив связи, можно быть уверенным, что ничего не потеряется.
+Представьте, что Вы решили удалить одну из групп в таблице учебной базы данных. Если бы связи не было, то для тех сотрудников, которые к ней были определены, остался идентификатор несуществующей группы. Связь не позволит удалить группу, пока она имеется во внешних ключах других таблиц. Для начала следовало определить сотрудников в другие имеющиеся или новые группы, а только затем удалить ненужную запись. Поэтому связи называют еще ограничениями.</p>
+
+<pre class="prettyprint">
+<code>
+package org.jbake;
+
+public class Oven {
+	public static void main(String[] args) {
+		System.out.print("Baking!");
+  }
+}
+</code>
+</pre>
+
+<p>In consequat imperdiet nunc quis bibendum. Nulla semper, erat quis ornare tristique, lectus massa posuere
+libero, ut vehicula lectus nunc ut lorem. Aliquam erat volutpat.</p>
+</p>
+
+	<hr />
+
+		</div>
+		<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.6</a></p>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+
+  </body>
+</html>
